@@ -2,7 +2,8 @@ package list;
 
 /**
  * 328. 奇偶链表
- * https://leetcode-cn.com/problems/odd-even-linked-list/description/
+ * 题目：https://leetcode-cn.com/problems/odd-even-linked-list/description/
+ * 思路：https://leetcode.com/articles/odd-even-linked-list/
  * Created by wy on 2018/7/1.
  */
 public class OddEvenLinkedList {
