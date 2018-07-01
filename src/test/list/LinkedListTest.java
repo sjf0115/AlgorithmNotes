@@ -3,25 +3,36 @@ package list;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by wy on 2018/7/1.
  */
 public class LinkedListTest {
 
-    private ListNode root = new ListNode(1);
+    private ListNode root;
+    private ListNode l1;
+    private ListNode l2;
     @Before
     public void init() {
-        ListNode node2 = new ListNode(2);
-        ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(4);
-        ListNode node5 = new ListNode(5);
-        ListNode node6 = new ListNode(6);
-        root.next = node2;
-        node2.next = node3;
-        node3.next = node4;
-        node4.next = node5;
-        node5.next = node6;
+        root = createList(new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5, 6)));
+        l1 = createList(new ArrayList<Integer>(Arrays.asList(5)));
+        l2 = createList(new ArrayList<Integer>(Arrays.asList(5)));
     }
+
+    private ListNode createList(List<Integer> list){
+        ListNode dummy = new ListNode(0);
+        ListNode curNode = dummy;
+        for(Integer num : list){
+            ListNode node = new ListNode(num);
+            curNode.next = node;
+            curNode = node;
+        }
+        return dummy.next;
+    }
+
     @Test
     public void testOddEvenList() {
         OddEvenLinkedList oddEvenLinkedList = new OddEvenLinkedList();
@@ -43,9 +54,19 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testReverseList (){
+    public void testReverseList() {
         ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
         ListNode head = reverseLinkedList.reverseList(root);
+        while(head != null){
+            System.out.println(head.val);
+            head = head.next;
+        }
+    }
+
+    @Test
+    public void testAddTwoNumbers() {
+        AddTwoNumbers2 solution = new AddTwoNumbers2();
+        ListNode head = solution.addTwoNumbers(l1, l2);
         while(head != null){
             System.out.println(head.val);
             head = head.next;
