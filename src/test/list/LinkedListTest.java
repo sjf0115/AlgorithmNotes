@@ -23,7 +23,7 @@ public class LinkedListTest {
         node5.next = node6;
     }
     @Test
-    public void testOddEvenList() throws Exception {
+    public void testOddEvenList() {
         OddEvenLinkedList oddEvenLinkedList = new OddEvenLinkedList();
         ListNode head = oddEvenLinkedList.oddEvenList(root);
         while(head != null){
@@ -33,9 +33,19 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testRemoveNthFromEnd() throws Exception{
+    public void testRemoveNthFromEnd() {
         RemoveNthNodeFromEndList removeNthNodeFromEndList = new RemoveNthNodeFromEndList();
         ListNode head = removeNthNodeFromEndList.removeNthFromEnd2(root, 1);
+        while(head != null){
+            System.out.println(head.val);
+            head = head.next;
+        }
+    }
+
+    @Test
+    public void testReverseList (){
+        ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+        ListNode head = reverseLinkedList.reverseList(root);
         while(head != null){
             System.out.println(head.val);
             head = head.next;
