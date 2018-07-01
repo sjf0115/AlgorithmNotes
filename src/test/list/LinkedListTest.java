@@ -31,4 +31,14 @@ public class LinkedListTest {
             head = head.next;
         }
     }
+
+    @Test
+    public void testRemoveNthFromEnd() throws Exception{
+        RemoveNthNodeFromEndList removeNthNodeFromEndList = new RemoveNthNodeFromEndList();
+        ListNode head = removeNthNodeFromEndList.removeNthFromEnd2(root, 1);
+        while(head != null){
+            System.out.println(head.val);
+            head = head.next;
+        }
+    }
 }
