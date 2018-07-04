@@ -6,7 +6,6 @@ package array;
  * Created by wy on 2018/7/3.
  */
 public class MaxProductSubArray {
-
     /**
      * 以当前值结尾的最大值在 当前值 以上一个值结尾的最小值*当前值 以上一个值结尾的最大值*当前值 三个值中产生
      * @param nums
