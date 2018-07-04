@@ -23,4 +23,11 @@ public class ArrayTest {
         int result = solution.maxSubArray(nums);
         System.out.println(result);
     }
+
+    @Test
+    public void testSqrt() {
+        Sqrt solution = new Sqrt();
+        int result = solution.mySqrt(4);
+        System.out.println(result);
+    }
 }
