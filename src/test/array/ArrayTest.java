@@ -39,4 +39,13 @@ public class ArrayTest {
         int result = solution.findLength(A, B);
         System.out.println(result);
     }
+
+    @Test
+    public void testLongestIncreasingSubSequence(){
+        //int[] nums = {10,9,2,5,3,7,101,18};
+        int[] nums = {10,9,2,5,3,4};
+        LongestIncreasingSubSequence solution = new LongestIncreasingSubSequence();
+        int result = solution.lengthOfLIS(nums);
+        System.out.println(result);
+    }
 }
