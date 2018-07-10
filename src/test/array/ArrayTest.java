@@ -30,4 +30,13 @@ public class ArrayTest {
         int result = solution.mySqrt(4);
         System.out.println(result);
     }
+
+    @Test
+    public void testMaxLengthRepeatedSubArray(){
+        int[] A = {1,2,3,2,1};
+        int[] B = {3,2,1,4,7};
+        MaxLengthRepeatedSubArray solution = new MaxLengthRepeatedSubArray();
+        int result = solution.findLength(A, B);
+        System.out.println(result);
+    }
 }
