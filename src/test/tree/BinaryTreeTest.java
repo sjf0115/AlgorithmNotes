@@ -38,4 +38,11 @@ public class BinaryTreeTest {
         int result = solution.sumOfLeftLeaves(root);
         System.out.println(result);
     }
+
+    @Test
+    public void testBinaryTreeLevelOrderTraversal(){
+        BinaryTreeLevelOrderTraversal solution = new BinaryTreeLevelOrderTraversal();
+        List<List<Integer>> result = solution.levelOrder(root);
+        System.out.println(result);
+    }
 }
