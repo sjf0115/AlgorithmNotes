@@ -48,4 +48,5 @@ public class ArrayTest {
         int result = solution.lengthOfLIS(nums);
         System.out.println(result);
     }
+
 }
