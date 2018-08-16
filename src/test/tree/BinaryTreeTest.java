@@ -1,5 +1,7 @@
 package tree;
 
+import org.junit.Test;
+
 import java.util.List;
 
 /**
@@ -23,10 +25,24 @@ public class BinaryTreeTest {
         node2.left = node5;
     }
 
-    @org.junit.Test
+    @Test
     public void testInorderTraversal() throws Exception {
         BinaryTreeInorderTraversal inorderTraversal = new BinaryTreeInorderTraversal();
         List<Integer> result = inorderTraversal.inorderTraversal(root);
+        System.out.println(result);
+    }
+
+    @Test
+    public void testSumOfLeftLeaves() {
+        SumLeftLeaves solution = new SumLeftLeaves();
+        int result = solution.sumOfLeftLeaves(root);
+        System.out.println(result);
+    }
+
+    @Test
+    public void testBinaryTreeLevelOrderTraversal(){
+        BinaryTreeLevelOrderTraversal solution = new BinaryTreeLevelOrderTraversal();
+        List<List<Integer>> result = solution.levelOrder(root);
         System.out.println(result);
     }
 }
