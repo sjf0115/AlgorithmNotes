@@ -18,7 +18,7 @@ public class Permutations {
      * @param nums
      * @return
      */
-    public List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permute2(int[] nums) {
 
         result = new ArrayList<>();
         if(nums == null || nums.length == 0){
@@ -54,10 +54,47 @@ public class Permutations {
 
     }
 
+    /**
+     * 优化版
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> permute(int[] nums) {
+        result = new ArrayList<>();
+        if(nums == null || nums.length == 0){
+            return result;
+        }
+        List<Integer> tmpList = new ArrayList<>();
+        helper(nums, tmpList);
+        return result;
+    }
+
+    /**
+     * 优化版
+     * @param nums
+     * @param tmpList
+     */
+    private void helper(int[] nums, List<Integer> tmpList){
+        int size = nums.length;
+        if(tmpList.size() == size){
+            result.add(new ArrayList<>(tmpList));
+            return;
+        }
+        for(int i = 0;i < size;i++){
+            // 已使用　跳过
+            if(tmpList.contains(nums[i])){
+                continue;
+            }
+            tmpList.add(nums[i]);
+            helper(nums, tmpList);
+            tmpList.remove(tmpList.size() - 1);
+        }
+    }
+
     public static void main(String[] args) {
 
         Permutations permutations = new Permutations();
-        int[] nums = {2, 1};
+        int[] nums = {1, 2, 3};
         List<List<Integer>> result = permutations.permute(nums);
         for(List<Integer> item : result){
             System.out.println(item.toString());
