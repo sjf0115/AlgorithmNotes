@@ -12,6 +12,12 @@ public class SearchInsertPosition {
         if(nums == null || size == 0){
             return 0;
         }
+        if(target < nums[0]){
+            return 0;
+        }
+        if(target > nums[size-1]){
+            return size;
+        }
         int left = 0;
         int right = size - 1;
         while(left <= right){
@@ -31,7 +37,7 @@ public class SearchInsertPosition {
 
     public static void main(String[] args) {
         int[] nums = {1,3,5,6};
-        int target = 5;
+        int target = 7;
         SearchInsertPosition solution = new SearchInsertPosition();
         int result = solution.searchInsert(nums, target);
         System.out.println(result);
