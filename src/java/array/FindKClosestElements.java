@@ -46,6 +46,13 @@ public class FindKClosestElements {
         return left;
     }
 
+    /**
+     * O(log(n)+k)
+     * @param arr
+     * @param k
+     * @param x
+     * @return
+     */
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
         List<Integer> result = new ArrayList<>();
         int size = arr.length;
