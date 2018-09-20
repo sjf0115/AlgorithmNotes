@@ -11,7 +11,7 @@ public class Sqrt {
         while(left <= right){
             // 避免溢出
             mid= left + (right - left) / 2;
-            // x < mid * mid
+            // x < mid * mid (mid * mid 会溢出)
             if(x / mid < mid){
                 right = mid - 1;
             }
@@ -24,6 +24,12 @@ public class Sqrt {
             }
         }
         return right;
+    }
+
+    public static void main(String[] args) {
+        Sqrt solution = new Sqrt();
+        int result = solution.mySqrt(8);
+        System.out.println(result);
     }
 }
 
