@@ -70,7 +70,6 @@ public class FindKClosestElements {
         }
         // 二分查找 插入位置
         int index = binarySearch(arr, x);
-        System.out.println("index:" + index);
         // 最接近的K个元素
         int left = Math.max(0, index - k);
         int right = Math.min(arr.length - 1, index + k);
